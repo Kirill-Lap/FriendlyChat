@@ -1,0 +1,46 @@
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<?scenebuilder-stylesheet /css/Styles.css?>
+
+<GridPane fx:id="grid" fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center"  hgap="10" vgap="10" styleClass="root">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+    <stylesheets><URL value="@/css/styles.css"/> </stylesheets>
+
+    <Label fx:id="signin" text="Sign in" onMouseClicked="#signInForm" textFill="aliceblue"
+           GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+
+    <Text id="welcome-text" text="Welcome"
+          GridPane.columnIndex="0" GridPane.rowIndex="1"
+            GridPane.columnSpan="2"/>
+
+
+    <Label fx:id="label1" text="Login:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <TextField fx:id="nameF" promptText="login"
+               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label fx:id="label2" text="Nickname:" managed="false" visible="false"
+           GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+    <TextField fx:id="nickF" promptText="nickname" managed="false" visible="false"
+               GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label fx:id="label3" text="Password:"
+           GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+    <PasswordField fx:id="passwordField" promptText="password" onAction="#handleAction"
+                   GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <HBox spacing="10" alignment="BOTTOM_RIGHT"
+          GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <Button fx:id="mainBtn" onAction="#handleAction" text="Login" />
+    </HBox>
+    <Text fx:id="actiontarget"
+          GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+</GridPane>

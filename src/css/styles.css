@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Istok+Web:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
+root { 
+    display: block;
+}
+.root {
+  -fx-background-image: url("../img/login.jpg");
+  -fx-background-size:     cover;                      /* <------ */
+  -fx-background-repeat:   no-repeat;
+  -fx-background-position: center center;              /* optional, center the image */
+  
+
+}
+#label1 {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FBC98F;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#label2 {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FBC98F;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#label3 {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FBC98F;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#welcome-text {
+   -fx-font-size: 32px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #FBC98F;
+/*   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );*/
+}
+
+#textArea {
+    -fx-background-color: transparent;
+}
+
+#scrollPane {
+    -fx-background-color: transparent;
+}
+
+#textArea .content{
+    -fx-background-color: transparent;
+}
+
+#textArea .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.ScrollPane {
+    -fx-background-color: transparent;
+}
+
+.VBox {
+      -fx-background-color: transparent;
+}
+
+.HBox {
+      -fx-background-color: transparent;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Istok Web", sans-serif;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+
+.button: hover {
+    -fx-text-fill: #FBC98F;  
+}
