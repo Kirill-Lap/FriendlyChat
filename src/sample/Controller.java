@@ -169,14 +169,17 @@ public class Controller  {
                                 else chatController.botMsg(meta[0], meta[1]);
 
                             } else {
-                                String regex = "^/authok.*";
-                                Pattern p =Pattern.compile(regex);
-                                Matcher m = p.matcher(str);
-                                if (m.matches()) {
+//                                String regex = "^/authok.*";
+//                                Pattern p =Pattern.compile(regex);
+//                                Matcher m = p.matcher(str);
+                                if (str.startsWith("/autok")) {
                                     authorized = true;
-                                    String meta[] = str.split(" ");
+                                    String meta[] = str.split(" ",2);
                                     ChatController.name = meta[1];
                                     runChat();
+                                } else if (str.startsWith("/timeout")){
+                                    printInfo(str);
+                                    break;
                                 } else {
                                     printInfo(str);
                                 }

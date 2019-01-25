@@ -15,7 +15,11 @@ public class ClientHandler {
     DataInputStream in;
     String nick;
 
+    long timeOut = 15000;
+    boolean isAuthorized = false;
+
     public ClientHandler(Server server, Socket socket) {
+        long a = System.currentTimeMillis();
         try {
             this.server = server;
             this.socket = socket;
@@ -48,19 +52,23 @@ public class ClientHandler {
                                     newNick = null;
                                 }
                         }
-
+                        long timeDif = System.currentTimeMillis()-a;
                         if (newNick != null) {
                             nick = newNick;
                             server.subscribe(ClientHandler.this);
                             out.writeUTF("/authok " + nick);
+                            isAuthorized = true;
+                            break;
+                        } else if (timeOut<timeDif){
+                            out.writeUTF("/timeout");
                             break;
                         } else {
-                            out.writeUTF(msg);
+                            out.writeUTF(msg + " " + timeDif);
                         }
 
                     }
 
-                    while(true){
+                    while(true && isAuthorized){
                         String str = in.readUTF();
                         if (str.equals("/end")) {
                             out.writeUTF("/connectionClosed");
