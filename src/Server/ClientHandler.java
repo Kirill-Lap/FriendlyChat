@@ -63,7 +63,7 @@ public class ClientHandler {
                             out.writeUTF("/timeout");
                             break;
                         } else {
-                            out.writeUTF(msg + " " + timeDif);
+                            out.writeUTF(msg + ": " + timeDif);
                         }
 
                     }
